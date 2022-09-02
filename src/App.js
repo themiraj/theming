@@ -3,6 +3,7 @@ import { AppWrapper } from './AppStyle.js';
 import { Provider } from 'react';
 import { Button, createTheme, ThemeProvider } from '@mui/material';
 import { red, purple } from '@mui/material/colors';
+import LandingPage from './app/Pages/LandingPage';
 const theme = createTheme({
   palette: {
     primary: {
@@ -20,7 +21,7 @@ function App() {
   return (
     <AppWrapper className="App" GlobalColor={'red'}>
         <ThemeProvider theme={theme}>
-          <Button color="secondary">Secondary</Button>
+          <LandingPage />
         </ThemeProvider>
     </AppWrapper>
   );
