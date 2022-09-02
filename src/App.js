@@ -1,24 +1,28 @@
 import logo from './logo.svg';
-import './App.css';
+import { AppWrapper } from './AppStyle.js';
+import { Provider } from 'react';
+import { Button, createTheme, ThemeProvider } from '@mui/material';
+import { red, purple } from '@mui/material/colors';
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: red[500],
+    },
+    secondary: {
+      // This is green.A700 as hex.
+      main: purple[500],
+    },
+  },
+});
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppWrapper className="App" GlobalColor={'red'}>
+        <ThemeProvider theme={theme}>
+          <Button color="secondary">Secondary</Button>
+        </ThemeProvider>
+    </AppWrapper>
   );
 }
 
