@@ -1,14 +1,21 @@
 import { Container } from '@mui/material'
+import { Box } from '@mui/system'
 import React from 'react'
 import { LayoutWrapper } from '../Layouts/style/layoutStyled'
-const Layout = ({children}) => {
+import PublicHeader from '../Shared/Components/GloabalComponent/PublicHeader'
+const Layout = (props) => {
   return (
-    <LayoutWrapper sx={{
-      backgroundColor: 'primary.main',
-      p:2
-    }}>
-      <Container maxWidth="sm">
-        {children}
+    <LayoutWrapper>
+      <PublicHeader />
+      <props.Con />
+      <Container maxWidth="xl">
+        <Box
+          sx={{
+            paddingLeft:3,
+            paddingRight:3,
+          }}>
+          {props.children}
+        </Box>
       </Container>
     </LayoutWrapper>
   )

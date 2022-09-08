@@ -1,8 +1,12 @@
 import React from 'react'
+import { Routes, Route } from 'react-router-dom'
+import LandingPage from '../app/Pages/LandingPage'
 
 const PublicRoutes = () => {
   return (
-    <div>PublicRoutes</div>
+    <Routes>
+        <Route path='/' element={<LandingPage />} />
+    </Routes>
   )
 }
 
