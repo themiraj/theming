@@ -4,6 +4,7 @@ import { Provider } from 'react';
 import { Button, createTheme, ThemeProvider } from '@mui/material';
 import { red, purple, blue,white } from '@mui/material/colors';
 import LandingPage from './app/Pages/LandingPage';
+import bgImage from 'src/assets/images/loginBg.jpg'
 import PublicRoutes from './Routes/PublicRoutes';
 const theme = createTheme({
   palette: {
@@ -28,7 +29,12 @@ const theme = createTheme({
 function App() {
   return (
 
-    <AppWrapper className="App" GlobalColor={'red'}>
+    <AppWrapper className="App" GlobalColor={'red'}
+      style={{
+        backgroundImage: `url(${bgImage})`,
+        height:'100vh'
+      }}
+    >
         <ThemeProvider theme={theme}>
           <PublicRoutes />
         </ThemeProvider>

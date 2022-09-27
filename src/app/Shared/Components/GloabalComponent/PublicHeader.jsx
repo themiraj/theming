@@ -2,6 +2,7 @@ import React from 'react'
 import AppBar from '@mui/material/AppBar'
 import { Box, Button, Container, Toolbar, Typography } from '@mui/material'
 import { Link } from 'react-router-dom'
+import { AuthPaths } from 'src/Routes/RouterPath'
 const PublicHeader = () => {
   return (
     <AppBar position="static">
@@ -25,7 +26,8 @@ const PublicHeader = () => {
                         </Typography>
                     </Box>
                     <Box>
-                        <Button component={Link} to={'/login'} variant="custom.white">Login</Button>
+                        <Button component={Link} to={AuthPaths.signup} variant="custom.white">Registration</Button>
+                        <Button component={Link} to={AuthPaths.login} variant="custom.white">Login</Button>
                     </Box>
                 </Box>
             </Toolbar>

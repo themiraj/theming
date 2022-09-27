@@ -7,7 +7,8 @@ const Layout = (props) => {
   return (
     <LayoutWrapper>
       <PublicHeader />
-      <props.Con />
+      {props.Con ? <props.Con /> : null}
+      
       <Container maxWidth="xl">
         <Box
           sx={{
