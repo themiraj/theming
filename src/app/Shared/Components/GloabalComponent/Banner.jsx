@@ -1,5 +1,4 @@
-import { Box, Grid } from '@mui/material'
-import { Container } from '@mui/system'
+import { Box } from '@mui/material'
 import React from 'react'
 
 const Banner = () => {

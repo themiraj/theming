@@ -1,4 +1,3 @@
-import { Container } from '@mui/material'
 import { Box } from '@mui/system'
 import React from 'react'
 import { LayoutWrapper } from '../Layouts/style/layoutStyled'
@@ -8,16 +7,13 @@ const Layout = (props) => {
     <LayoutWrapper>
       <PublicHeader />
       {props.Con ? <props.Con /> : null}
-      
-      <Container maxWidth="xl">
         <Box
           sx={{
-            paddingLeft:3,
-            paddingRight:3,
+            paddingLeft:0,
+            paddingRight:0,
           }}>
           {props.children}
         </Box>
-      </Container>
     </LayoutWrapper>
   )
 }

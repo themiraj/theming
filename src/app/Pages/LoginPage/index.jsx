@@ -1,14 +1,11 @@
 import { Box, Divider } from '@mui/material'
 import { CustomeInput } from 'src/StyledComponents/GlobalStyledComponent'
-import Layout from '../../Layouts/Layout'
 import { Button } from '@mui/material';
 import {ReactComponent as GoogleIcon} from 'src/assets/svg/googleSvg.svg'
 import { Link } from 'react-router-dom';
-import { CSSTransition, ReactCSSTransitionGroup } from 'react-transition-group'
-import { Fade, Reveal, Zoom } from 'react-reveal';
+import { Fade } from 'react-reveal';
 const LoginPage = () => {
 	return (
-		<Layout>
 			<Fade>
 				<Box 
 					sx={{
@@ -49,7 +46,6 @@ const LoginPage = () => {
 					</Box>
 				</Box>
 			</Fade>
-		</Layout>
 	)
 }
 

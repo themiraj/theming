@@ -12,7 +12,7 @@ export const cartSlice = createSlice({
         ADD_CARD: (state) => {
             const Add = cartAction(state.value)
             state.value = Add;
-        } 
+        }
     }
 })
 export const { ADD_CARD } = cartSlice.actions 
