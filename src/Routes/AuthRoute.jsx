@@ -22,12 +22,12 @@ const AuthRoute = () => {
           <CircularProgress color="inherit" />
         </Backdrop>
         }>
-          <Routes>
+          {/* <Routes>
             <Route path={AuthPaths.home} element={<LandingPage />} />
             <Route path={AuthPaths.login} element={<LoginPage />} />
             <Route path={AuthPaths.signup} element={<SignupPage />} />
             <Route path='*' element={<NotFoundPage />} />
-          </Routes>
+          </Routes> */}
         </Suspense>
       </Layout>
     </>

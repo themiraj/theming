@@ -12,6 +12,8 @@ import { USER_LOGIN } from './Redux/Reducer/AuthReducer';
 import { connect } from 'react-redux';
 import PrivateLayout from './app/Layouts/PrivateLayout';
 import NotFoundPage from './app/Pages/NotFoundPage/Index.jsx';
+import { useCallback } from 'react';
+import { registerUser } from './Redux/Action/AuthAction.js';
 const theme = createTheme({
   palette: {
     primary: {
@@ -33,22 +35,27 @@ const theme = createTheme({
 
 
 function App(props) {
-  const { loginCheck} = props;
 
+  const { registerUser  } = props;
+  console.log(props)
   useEffect(()=> {
-    onAuthStateChanged(auth, (user) => {
-      if(user){
-        loginCheck(true)
-      }else{
-        loginCheck(false)
-      }
-    })
+    registerUser()
+    // onAuthStateChanged(auth, (user) => {
+    //   if(user){
+    //     USER_LOGIN(true)
+    //   }else{
+    //     USER_LOGIN(false)
+    //   }
+    // })
   },[])
 
   useEffect(()=> { 
     
-    console.log(props.auth) 
+    // console.log(props.auth) 
   },[])
+
+  // const handleSubmit = useCallback((orderDetails) => {
+  // }, [productId, referrer]);
 
   return (
 
@@ -59,7 +66,7 @@ function App(props) {
       }}
     >
         <ThemeProvider theme={theme}>
-          <Routes>
+          <Routes>a
                 {props.auth ? 
                   <Route path='/' element={<PrivateLayout />} />
                   : <Route element={<AuthRoute />} />
@@ -67,19 +74,12 @@ function App(props) {
               
                 }
                 <Route path='*' element={<NotFoundPage />} />
-          </Routes>
-          {/* <AuthRoute /> */}
+          </Routes>  
         </ThemeProvider>
     </AppWrapper>
   );
 }
-const mapStateToProps = (state) => ({
-  auth: state.AuthReducer
-});
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    loginCheck: (state) => dispatch(USER_LOGIN(state))
-  }
-}
-export default connect(mapStateToProps,mapDispatchToProps)(App);
+export default connect((state) => ({ ...state.AuthReducer }), {
+  registerUser
+})(App);
